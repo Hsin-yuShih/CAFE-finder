@@ -4,7 +4,7 @@ from main import CafeAgent
 
 # 1. 頁面配置：專業、簡潔
 st.set_page_config(
-    page_title="CafeFinder | 智慧探店助手",
+    page_title="CAFÉ Finder: 跑咖找找",
     page_icon="☕",
     layout="wide"
 )
@@ -20,7 +20,7 @@ with st.sidebar:
     st.title("系統資訊 🛠️")
     st.markdown("""
     本助手採用 **RAG (檢索增強生成)** 技術，整合了：
-    - **Google Places API**: 實時店家與評論數據
+    - **Google Places API**: 店家與評論數據
     - **Web Search**: 網路食記與部落格佐證 
     - **Ollama LLM**: GPT-OSS 120B 推理核心
     """)
@@ -29,8 +29,9 @@ with st.sidebar:
     # st.image("diagrams/state_machine.png", caption="系統運作邏輯 (State Machine)")
 
 # 4. 主介面標題
-st.title("☕ CafeFinder")
-st.subheader("基於 AI 推理的深度咖啡廳分析系統")
+st.title("☕ CAFÉ Finder: 跑咖找找")
+# st.subheader("基於 AI 推理的深度咖啡廳分析系統")
+st.subheader("一個幫助你找到理想咖啡廳的小工具")
 
 # 5. 顯示歷史對話紀錄
 for message in st.session_state.messages:
@@ -71,4 +72,4 @@ if prompt := st.chat_input("輸入您的需求（例如：台南成大附近有�
 
 # 頁尾說明
 st.divider()
-st.caption("CafeFinder Project 2025 | Powered by Ollama & Google Cloud Platform")
+st.caption("CAFÉ Finder Project 2025 | Powered by Ollama & Google Cloud Platform")
