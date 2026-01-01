@@ -1,13 +1,13 @@
 
-# ☕ CafeFinder: 智慧探店代理人
+# ☕ CAFÉ Finder: 跑咖找找
 
-**CafeFinder** 是一個基於 Large Language Model (LLM) 開發的智慧 Agent，專門為咖啡愛好者設計 。不同於傳統搜尋引擎，它結合了 **Google Places API** 的實時評論分析與 **網路搜尋** 的食記佐證，能精準理解模糊需求（如：適合讀書、有好吃巴斯克蛋糕），並提供具備推理依據的深度推薦報告 。
+**CAFÉ Finder** 是一個基於 Large Language Model (LLM) 開發的智慧 Agent，專門為咖啡愛好者設計 。不同於傳統搜尋引擎，它結合了 **Google Places API** 的即時評論分析與 **網路搜尋** 的食記佐證，能精準理解模糊需求（如：適合讀書、有好吃巴斯克蛋糕），並提供具備推理依據的深度推薦報告 。
 
 本專案為 **TOC 2025 Final Project** 之實作成果 。
 
 ## 🌟 核心特色 (Advanced Level 功能)
 
-為了超越基礎的 Web Search 範例並達到「進階評分」標準，本專案實作了以下功能 ：
+為了超越基礎的 Web Search 範例，本專案實作了以下功能 ：
 
 * **智慧意圖路由 (Intent Router)**：能自動判斷使用者是在「打招呼/閒聊」、「追問細節」或「發起新的搜尋任務」，避免無謂的 API 消耗。
 * **雙階段數據檢索 (RAG)**：
@@ -19,7 +19,7 @@
 
 ## 🏗️ 系統架構與邏輯 (System Logic)
 
-本系統的核心邏輯遵循下方的 **有向無環圖 (DAG) / 狀態機 (State Machine)** 設計，確保任務執行的嚴謹性 ：
+本系統的核心邏輯遵循下方的 **狀態機 (State Machine)** 設計，確保任務執行的嚴謹性 ：
 
 ```mermaid
 stateDiagram-v2
@@ -52,9 +52,9 @@ stateDiagram-v2
 
 ---
 
-## 🛠️ 技術棧 (Tech Stack)
+## 🛠️ 技術亮點 (Tech Stack)
 
-* **大腦 (LLM)**: 使用由學科提供的 **Ollama API** (模型: gpt-oss-120b) 。
+* **大腦 (LLM)**: 使用助教提供的 **Ollama API** (模型: gpt-oss-120b) 。
 * **介面 (UI)**: Streamlit (Python-based Web Framework)。
 * **地圖數據**: Google Places API (Text Search & Place Details)。
 * **網路檢索**: DuckDuckGo Search API。
@@ -77,12 +77,12 @@ pip install -r requirements.txt
 
 ### 2. 配置 API 金鑰
 
-請在主目錄下建立 `config.py` (此檔案已被納入 `.gitignore` 以保護安全) ：
+請在主目錄下建立 `config.py`：
 
 ```python
 # config.py
 OLLAMA_API_KEY = "Your_Ollama_Key"
-OLLAMA_API_URL = "https://api-gateway.netdb.csie.ncku.edu.tw/api/generate"
+OLLAMA_API_URL = "https://api-gateway.netdb.csie.ncku.edu.tw/api/generate" #助教提供
 GOOGLE_MAPS_API_KEY = "Your_Google_Key"
 
 ```
@@ -112,5 +112,4 @@ streamlit run app.py
 ## ⚖️ 免責聲明與安全性
 
 * 本專案僅供學術用途。
-* API 使用均已加密處理，並嚴格遵守助教規定的 API 調用頻率與安全性要求 。
 ---
