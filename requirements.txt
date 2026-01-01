@@ -1,0 +1,4 @@
+requests
+googlemaps
+ddgs
+streamlit
